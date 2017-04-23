@@ -1,7 +1,9 @@
-package br.com.samples.tomazmartins.sampleretrofit;
+package br.com.samples.tomazmartins.sampleretrofit.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import br.com.samples.tomazmartins.sampleretrofit.R;
 
 public class MainActivity extends AppCompatActivity {
 
