@@ -6,6 +6,8 @@ import android.os.Bundle;
 import br.com.samples.tomazmartins.sampleretrofit.R;
 
 public class MainActivity extends AppCompatActivity {
+    final private String REST_API = "http://pokeapi.co/api/v2/";
+
 
     @Override
     protected void onCreate( Bundle savedInstanceState ) {
