@@ -97,4 +97,40 @@ public class Pokemon {
     public void setTypes( List<PokemonType> types ) {
         this.mTypes = types;
     }
+
+    @Override
+    public String toString() {
+        return new StringBuilder()
+                .append( this.getId() )
+                .append( " {" )
+                .append( "name( " )
+                .append( this.getName() )
+                .append( " ), " )
+                .append( "order( " )
+                .append( this.getOrder() )
+                .append( " ), " )
+                .append( "base_Experience( " )
+                .append( this.getBaseExperience() )
+                .append( " ), " )
+                .append( "height( " )
+                .append( this.getHeight() )
+                .append( " ), " )
+                .append( "weight( " )
+                .append( this.getWeight() )
+                .append( " ), " )
+                .append( "isdefault( " )
+                .append( this.getIsDefault() )
+                .append( " ), " )
+                .append( "types( " )
+                .append( this.getTypes() )
+                .append( " ), " )
+                .append( "stats( " )
+                .append( this.getStats() )
+                .append( " ), " )
+                .append( "abilities( " )
+                .append( this.getAbilities() )
+                .append( " ), " )
+                .append( "}" )
+                .toString();
+    }
 }
