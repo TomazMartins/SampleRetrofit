@@ -3,6 +3,8 @@ package br.com.samples.tomazmartins.sampleretrofit.model;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
 public class Pokemon {
     @SerializedName( "id" ) private int mId;
     @SerializedName( "name" ) private String mName;
