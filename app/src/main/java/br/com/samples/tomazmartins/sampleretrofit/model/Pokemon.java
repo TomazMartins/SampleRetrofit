@@ -100,7 +100,9 @@ public class Pokemon {
 
     @Override
     public String toString() {
-        return new StringBuilder()
+        int counter = 0;
+
+        StringBuilder builder = new StringBuilder()
                 .append( this.getId() )
                 .append( " {" )
                 .append( "name( " )
@@ -118,19 +120,53 @@ public class Pokemon {
                 .append( "weight( " )
                 .append( this.getWeight() )
                 .append( " ), " )
-                .append( "isdefault( " )
+                .append( "is_default( " )
                 .append( this.getIsDefault() )
                 .append( " ), " )
-                .append( "types( " )
-                .append( this.getTypes() )
-                .append( " ), " )
-                .append( "stats( " )
-                .append( this.getStats() )
-                .append( " ), " )
-                .append( "abilities( " )
-                .append( this.getAbilities() )
-                .append( " ), " )
-                .append( "}" )
-                .toString();
+                .append( "types( " );
+
+                counter = 0;
+                for( PokemonType type : this.getTypes() ) {
+                    builder.append( type.toString() );
+
+                    if( counter < this.getTypes().size() ) {
+                        builder.append( ", " );
+                    }
+
+                    ++counter;
+                }
+
+                builder.append( " ), " )
+                .append( "stats( " );
+
+                counter = 0;
+                for( PokemonStats stat : this.getStats() ) {
+                    builder.append( stat.toString() );
+
+                    if( counter < this.getStats().size() ) {
+                        builder.append( ", " );
+                    }
+
+                    ++counter;
+                }
+
+                builder.append( " ), " )
+                .append( "abilities( " );
+
+                counter = 0;
+                for( PokemonAbility ability : this.getAbilities() ) {
+                    builder.append( ability.toString() );
+
+                    if( counter < this.getAbilities().size() ) {
+                        builder.append( ", " );
+                    }
+
+                    ++counter;
+                }
+
+                builder.append( " )" )
+                .append( "}" );
+
+        return builder.toString();
     }
 }

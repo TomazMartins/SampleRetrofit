@@ -32,4 +32,9 @@ class PokemonStats {
     public void setBaseStat( int baseStat ) {
         this.mBaseStat = baseStat;
     }
+
+    @Override
+    public String toString() {
+        return new String( this.getStat().toString() );
+    }
 }

@@ -23,4 +23,9 @@ class PokemonType {
     public void setType( Type type ) {
         this.mType = type;
     }
+
+    @Override
+    public String toString() {
+        return new String( this.getType().toString() );
+    }
 }

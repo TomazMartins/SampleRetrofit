@@ -31,4 +31,9 @@ class PokemonAbility {
     public void setAbility( Ability ability ) {
         this.mAbility = ability;
     }
+
+    @Override
+    public String toString() {
+        return new String( this.getAbility().toString() );
+    }
 }
