@@ -1,8 +1,7 @@
 package br.com.samples.tomazmartins.sampleretrofit.activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Html;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.TextView;
 
@@ -13,13 +12,11 @@ import br.com.samples.tomazmartins.sampleretrofit.R;
 import br.com.samples.tomazmartins.sampleretrofit.model.Pokemon;
 import br.com.samples.tomazmartins.sampleretrofit.restapi.RestPokemonApi;
 import br.com.samples.tomazmartins.sampleretrofit.util.PokemonDeserializer;
-import retrofit.Call;
-import retrofit.Callback;
-import retrofit.GsonConverterFactory;
-import retrofit.Response;
-import retrofit.Retrofit;
-
-import static android.text.Html.fromHtml;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
     final private String REST_API = "http://pokeapi.co/api/v2/";
@@ -52,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         Call<Pokemon> call = pokemonApi.getPokemon( 1 );
         call.enqueue( new Callback<Pokemon>() {
             @Override
-            public void onResponse( Response<Pokemon> response, Retrofit retrofit ) {
+            public void onResponse( Call<Pokemon> call, Response<Pokemon> response ) {
                 Pokemon pokemon = response.body();
 
                 if( pokemon != null ) {
@@ -61,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure( Throwable t ) {
+            public void onFailure( Call<Pokemon> call, Throwable t ) {
                 Log.i( "PROBLEM", "There are a problem when receive the data..." );
             }
         } );
